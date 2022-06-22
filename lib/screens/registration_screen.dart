@@ -1,7 +1,9 @@
-
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'login_screen.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class RegistrationScreen extends StatefulWidget {
   RegistrationScreen({Key? key}) : super(key: key);
@@ -19,6 +21,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final emailEditingController = new TextEditingController();
   final passwordEditingController = new TextEditingController();
   final confirmPasswordEditingController = new TextEditingController();
+  late bool _sucess;
+  late String _userEmail;
+
+   void _register() async {
+    final User? user = (
+    await _auth.createUserWithEmailAndPassword(email:  emailEditingController.text, password:passwordEditingController.text)
+    ).user;
+
+    if(user != null) {
+      setState(() {
+        _sucess = true;
+        _userEmail = user.email!;
+      });
+    } else {
+      setState(() {
+        _sucess = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -163,7 +184,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
-          onPressed: () {},
+          onPressed: () async {
+            _register();
+          },
           child: Text(
             "SignUp",
             textAlign: TextAlign.center,

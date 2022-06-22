@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/my_nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome"),
+        title: const Text("T-Helper"),
         centerTitle: true,
       ),
        body: Center(
@@ -45,6 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ),
           ),
+    extendBody: true,
+    bottomNavigationBar: const BottomNavBarCurvedFb1(),
     );
   }
 }

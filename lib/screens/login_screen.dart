@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => HomeScreen()));
           },
           child: Text("Login",
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           fit: BoxFit.contain,
                         )),
                     SizedBox(
-                      height: 100,
+                      height: 10,
                     ),
                     emailField,
                     SizedBox(
