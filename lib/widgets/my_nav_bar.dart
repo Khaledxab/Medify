@@ -8,9 +8,6 @@ class BottomNavBarCurvedFb1 extends StatefulWidget {
 }
 
 class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
-  
-
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,7 +31,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
             heightFactor: 0.6,
             child: FloatingActionButton(
                 backgroundColor: primaryColor,
-                child: Icon(Icons.shopping_basket),
+                child: Icon(Icons.home_outlined),
                 elevation: 0.1,
                 onPressed: () {}),
           ),
@@ -44,16 +41,16 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 NavBarIcon(
-                  text: "Home",
-                  icon: Icons.home_outlined,
+                  text: "GPS",
+                  icon: Icons.location_on_outlined,
                   selected: true,
                   onPressed: () {},
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
                 NavBarIcon(
-                  text: "Search",
-                  icon: Icons.search_outlined,
+                  text: "services",
+                  icon: Icons.miscellaneous_services_outlined,
                   selected: false,
                   onPressed: () {},
                   defaultColor: secondaryColor,
@@ -61,15 +58,15 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 ),
                 SizedBox(width: 56),
                 NavBarIcon(
-                    text: "Cart",
-                    icon: Icons.local_grocery_store_outlined,
+                    text: "Hot alerts",
+                    icon: Icons.local_fire_department_outlined,
                     selected: false,
                     onPressed: () {},
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
                 NavBarIcon(
-                  text: "Calendar",
-                  icon: Icons.date_range_outlined,
+                  text: "more",
+                  icon: Icons.more_horiz,
                   selected: false,
                   onPressed: () {},
                   selectedColor: primaryColor,
@@ -85,13 +82,13 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
 }
 
 class BottomNavCurvePainter extends CustomPainter {
-  BottomNavCurvePainter({this.backgroundColor = Colors.white, this.insetRadius = 38});
+  BottomNavCurvePainter(
+      {this.backgroundColor = Colors.white, this.insetRadius = 38});
 
   Color backgroundColor;
   double insetRadius;
   @override
   void paint(Canvas canvas, Size size) {
-
     Paint paint = Paint()
       ..color = backgroundColor
       ..style = PaintingStyle.fill;
