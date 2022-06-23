@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/my_nav_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -41,7 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
                ActionChip(
                   label: Text("Logout"),
-                  onPressed: () {}),
+                  onPressed: () {logout(context);
+                  }),
             ],
           ),
           ),
@@ -50,4 +53,19 @@ class _HomeScreenState extends State<HomeScreen> {
     bottomNavigationBar: const BottomNavBarCurvedFb1(),
     );
   }
+
+
+
+
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => LoginScreen()));
+  }
 }
+
+
+
+
+
+

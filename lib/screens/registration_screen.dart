@@ -24,12 +24,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   late bool _sucess;
   late String _userEmail;
 
-   void _register() async {
-    final User? user = (
-    await _auth.createUserWithEmailAndPassword(email:  emailEditingController.text, password:passwordEditingController.text)
-    ).user;
+  void _register() async {
+    final User? user = (await _auth.createUserWithEmailAndPassword(
+            email: emailEditingController.text,
+            password: passwordEditingController.text))
+        .user;
 
-    if(user != null) {
+    if (user != null) {
       setState(() {
         _sucess = true;
         _userEmail = user.email!;
