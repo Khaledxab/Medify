@@ -83,9 +83,3 @@ User? user = FirebaseAuth.instance.currentUser;
         MaterialPageRoute(builder: (context) => LoginScreen()));
   }
 }
-
-
-
-
-
-
