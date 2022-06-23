@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:t_helper/screens/home_screen.dart';
+
+import '../screens/location.dart';
 
 class BottomNavBarCurvedFb1 extends StatefulWidget {
   const BottomNavBarCurvedFb1({Key? key}) : super(key: key);
@@ -33,7 +36,10 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 backgroundColor: primaryColor,
                 child: Icon(Icons.home_outlined),
                 elevation: 0.1,
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                }),
           ),
           Container(
             height: height,
@@ -44,7 +50,12 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                   text: "GPS",
                   icon: Icons.location_on_outlined,
                   selected: true,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LocationScreen()));
+                  },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
@@ -65,8 +76,8 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
                 NavBarIcon(
-                  text: "more",
-                  icon: Icons.more_horiz,
+                  text: "camera",
+                  icon: Icons.camera_alt_outlined,
                   selected: false,
                   onPressed: () {},
                   selectedColor: primaryColor,
