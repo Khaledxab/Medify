@@ -7,7 +7,7 @@ import '../models/user_model.dart';
 
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -37,6 +37,7 @@ User? user = FirebaseAuth.instance.currentUser;
       appBar: AppBar(
         title: const Text("T-Helper"),
         centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
        body: Center(
         child: Padding(

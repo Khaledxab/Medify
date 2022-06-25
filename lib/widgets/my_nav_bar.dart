@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:t_helper/screens/home_screen.dart';
 
 import '../screens/location.dart';
+import '../screens/cam_screen.dart';
 
 class BottomNavBarCurvedFb1 extends StatefulWidget {
   const BottomNavBarCurvedFb1({Key? key}) : super(key: key);
@@ -16,10 +17,11 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
     Size size = MediaQuery.of(context).size;
     double height = 56;
 
-    final primaryColor = Colors.orange;
-    final secondaryColor = Colors.black54;
+    const primaryColor = Colors.orange;
+    const secondaryColor = Colors.black54;
+
     final accentColor = const Color(0xffffffff);
-    final backgroundColor = Colors.white;
+    const backgroundColor = Colors.white;
 
     return BottomAppBar(
       color: Colors.transparent,
@@ -79,7 +81,10 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                   text: "camera",
                   icon: Icons.camera_alt_outlined,
                   selected: false,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CamScreen()));
+                  },
                   selectedColor: primaryColor,
                   defaultColor: secondaryColor,
                 )
