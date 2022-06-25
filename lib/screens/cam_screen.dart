@@ -61,6 +61,7 @@ class _CamScreenState extends State<CamScreen> {
                 text: 'Select File',
                 icon: Icons.attach_file,
                 onClicked: selectFile,
+                
               ),
               SizedBox(height: 8),
               Text(
@@ -75,6 +76,7 @@ class _CamScreenState extends State<CamScreen> {
               ),
               SizedBox(height: 20),
               task != null ? buildUploadStatus(task!) : Container(),
+              
             ],
           ),
         ),
