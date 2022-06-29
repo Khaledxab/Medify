@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
           if (value!.isEmpty) {
             return ("Please Enter Your Email");
           }
-          // reg expression for email validation
+          // regular expression for email validation
           if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
               .hasMatch(value)) {
             return ("Please Enter a valid email");
@@ -112,13 +112,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                        height: 200,
+                        height: 150,
                         child: Image.asset(
                           "assets/logo.png",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(
-                      height: 10,
+                      height: 50,
                     ),
                     emailField,
                     SizedBox(

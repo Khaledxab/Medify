@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:t_helper/screens/home_screen.dart';
 
 import '../screens/location.dart';
 import '../screens/cam_screen.dart';
+import '../screens/login_screen.dart';
 
 class BottomNavBarCurvedFb1 extends StatefulWidget {
   const BottomNavBarCurvedFb1({Key? key}) : super(key: key);
@@ -63,27 +65,29 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                 ),
                 NavBarIcon(
                   text: "services",
-                  icon: Icons.miscellaneous_services_outlined,
+                  icon: Icons.camera_alt_outlined,
                   selected: false,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CamScreen()));
+                  },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
                 ),
                 SizedBox(width: 56),
                 NavBarIcon(
                     text: "Hot alerts",
-                    icon: Icons.local_fire_department_outlined,
+                    icon: Icons.shopping_cart_outlined,
                     selected: false,
                     onPressed: () {},
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
                 NavBarIcon(
                   text: "camera",
-                  icon: Icons.camera_alt_outlined,
+                  icon: Icons.logout_outlined,
                   selected: false,
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => CamScreen()));
+                    logout(context);
                   },
                   selectedColor: primaryColor,
                   defaultColor: secondaryColor,
@@ -94,6 +98,13 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
         ],
       ),
     );
+  }
+
+  // logout
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => LoginScreen()));
   }
 }
 
