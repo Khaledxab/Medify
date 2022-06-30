@@ -59,7 +59,7 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LocationScreen()));
+                            builder: (context) => CurrentLocationScreen()));
                   },
                   defaultColor: secondaryColor,
                   selectedColor: primaryColor,
