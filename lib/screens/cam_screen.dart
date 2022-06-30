@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 
+import '../widgets/my_nav_bar.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
@@ -81,6 +83,8 @@ class _CamScreenState extends State<CamScreen> {
           ),
         ),
       ),
+      extendBody: true,
+      bottomNavigationBar: const BottomNavBarCurvedFb1(),
     );
   }
 
