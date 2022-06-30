@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:t_helper/screens/checkout.dart';
 import 'package:t_helper/screens/home_screen.dart';
 
 import '../screens/location.dart';
@@ -79,7 +80,8 @@ class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> {
                     text: "Hot alerts",
                     icon: Icons.shopping_cart_outlined,
                     selected: false,
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CheckoutScreen()));},
                     defaultColor: secondaryColor,
                     selectedColor: primaryColor),
                 NavBarIcon(
